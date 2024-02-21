@@ -21,16 +21,18 @@ class OwnerMint extends React.Component {
     });
   }
   Mint() {
-    alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน");
-    // console.log(this.state.address)
-    // this.state.kmutnbToken.methods
-    //   .mint(this.state.account,this.state.amount)
-    //   .send({ from: this.state.account })
-    //   .once("receipt", (receipt) => {
-    //     console.log("BurnSusess", this.state.account, ":", this.state.amount);
-    //     window.location.reload();
-    //   });
+    // alert("This function is not yet enabled. Please proceed with the task and enable it.");
+    // console.log(this.state.account); // Corrected from this.state.address
+    this.state.kmutnbToken.methods
+      .mint(this.state.account, this.state.amount)
+      .send({ from: this.state.account })
+      .once("receipt", (receipt) => {
+        console.log("Mint Success", this.state.account, ":", this.state.amount);
+        window.location.reload();
+      });
   }
+  
+  
   render() {
     return (
       <>

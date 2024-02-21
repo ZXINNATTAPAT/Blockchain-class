@@ -22,15 +22,15 @@ class AddOwner extends React.Component {
   }
 
   AddMint() {
-    alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน");
+    // alert("ฟังชั่นนี้ยังไม่เปิดใช้งาน กรุณาดำเนินการตามโจทย์ และเปิดใช้งาน");
     // console.log(this.state.address)
-    // this.state.kmutnbToken.methods
-    //   .addMinter(this.state.addressOwner)
-    //   .send({ from: this.state.account })
-    //   .once("receipt", (receipt) => {
-    //     console.log("BurnSusess", this.state.account, ":", this.state.addressOwner);
-    //     window.location.reload();
-    //   });
+    this.state.kmutnbToken.methods
+      .addMinter(this.state.addressOwner)
+      .send({ from: this.state.account })
+      .once("receipt", (receipt) => {
+        console.log("BurnSusess", this.state.account, ":", this.state.addressOwner);
+        window.location.reload();
+      });
   }
 
   render() {
